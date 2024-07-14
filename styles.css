@@ -1,0 +1,402 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif, 'Roboto ', sans-serif;
+	box-sizing: border-box;
+}
+
+/* Default styles for desktop view */
+
+#header {
+	display: flex;
+	align-items: center;
+	padding: 20px; /* Add padding as needed */
+}
+
+img {
+	width: 100px; /* Adjust the width as needed */
+	height: auto; /* Maintain aspect ratio */
+	margin-right: 20px; /* Add space between image and text */
+}
+
+#main {
+	position: relative; /* Required for absolute positioning of the pseudo-element */
+	height: 100vh;
+	background-image: url('images/weightlifter2.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	width: 100%;
+	display: flex; /* Assuming you want to use flexbox for content alignment */
+	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; /* Center content vertically */
+	margin-bottom: 4em;
+}
+
+#logo {
+	height: 200px;
+	width: 250px;
+	background-image: url('images/Fitness for anyone (3.5 x 2 in).png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	top: -9em;
+	left: -35em;
+}
+
+#main::before {
+	content: ''; /* Required for the pseudo-element to display */
+	position: absolute; /* Positioning relative to the #main element */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.7
+	); /* Example: black with 50% opacity, change as needed */
+	z-index: 1; /* Ensure it sits above the background image but below content */
+}
+
+/* Any content inside #main should be placed above the overlay */
+#main > * {
+	position: relative;
+	z-index: 2; /* Higher z-index to make content appear above the overlay */
+}
+
+#navbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px; /* Spacing around the nav */
+	margin-top: 20px;
+	margin-right: 25px;
+}
+
+#navbar ul {
+	list-style: none;
+	display: flex;
+}
+
+#navbar li {
+	margin-top: 20px;
+	margin-left: 30px; /* Space between menu items */
+}
+
+#navbar a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.btn-transparent {
+	background-color: transparent;
+	border: 2px solid;
+	color: white;
+	border-radius: 25px;
+	padding: 8px;
+	margin: 8px;
+	position: relative;
+	top: -21em;
+	text-decoration: none;
+}
+
+.btn-transparent:hover {
+	color: #663abe;
+}
+
+#headline {
+	color: #663abe;
+	display: flex;
+	justify-content: center;
+	font-size: 82px;
+	letter-spacing: 3.5;
+	top: -1em;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+#tagline {
+	color: #663abe;
+	display: flex;
+	justify-content: center;
+	font-size: 42px;
+	font-style: italic;
+	letter-spacing: 3;
+	font-weight: 300;
+	top: -2em;
+}
+
+#actionButtons {
+	display: flex;
+	justify-content: center;
+	top: -2em;
+}
+
+#about {
+	margin-top: 2em;
+}
+
+#about h1 {
+	color: #663abe;
+	margin-bottom: 1em;
+	margin-left: 4ex;
+}
+
+#about p {
+	margin: 4em;
+}
+
+.card {
+	cursor: pointer;
+	margin-bottom: 20px; /* Add space between rows */
+}
+
+.card-img {
+	height: 400px; /* Set a fixed height for all images */
+	object-fit: cover; /* Ensures the image covers the area without distorting */
+	width: 100%; /* Ensures the image covers the full width of the card */
+}
+
+.card-img-overlay {
+	background: rgba(0, 0, 0, 0); /* Initially transparent background */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.card:hover .card-img-overlay,
+.card:focus .card-img-overlay {
+	background: rgba(0, 0, 0, 0.7); /* Dark background on hover */
+}
+
+.card-text {
+	visibility: hidden; /* Initially hidden text */
+	color: white;
+	text-align: center;
+}
+
+.card:hover .card-text,
+.card:focus .card-text {
+	visibility: visible; /* Show text on hover */
+}
+
+#divider {
+	background-image: url('images/pushuplady.jpeg');
+	height: 550px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 4em;
+	background-position: center;
+	margin-bottom: 5em;
+}
+
+#contactAction {
+	text-align: center;
+	color: #663abe;
+	margin-bottom: 25px;
+	font-weight: 500;
+}
+
+#contactForm {
+	display: flex;
+	flex-direction: column;
+}
+
+form {
+	max-width: 600px;
+	margin: 0 auto;
+	margin-bottom: 3em;
+	margin-top: 3em;
+}
+
+input,
+textarea,
+button {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+textarea {
+	height: 200px; /* Increase the height as needed */
+}
+
+button {
+	background-color: #663abe;
+	color: white;
+	border: none;
+}
+
+button:hover {
+	background-color: #927cbc;
+}
+
+.footer {
+	background-color: #663abe;
+	color: white;
+	height: 150px;
+	width: 100%;
+}
+
+.footer .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	margin-top: 3em;
+	width: 100%;
+}
+
+.footer .social-icons a {
+	color: white;
+	font-size: 34px;
+}
+
+/* Media Queries */
+
+/* Mobile and Tablet view */
+@media (max-width: 1024px) {
+	#header {
+		padding: 10px;
+	}
+
+	#main {
+		background-attachment: scroll;
+		height: auto;
+		padding: 20px;
+	}
+
+	#logo {
+		height: 200px;
+		width: 225px;
+		top: 3em;
+		left: 0;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	#navbar {
+		display: none; /* Hide navbar by default */
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 250px;
+		background-color: rgba(0, 0, 0, 0.9);
+		z-index: 1000;
+		flex-direction: column;
+		padding-top: 60px; /* Ensure space for hamburger menu */
+	}
+
+	#navbar.open {
+		display: flex; /* Show navbar when open */
+	}
+
+	#navbar ul {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	#navbar li {
+		margin: 20px 0;
+	}
+
+	.btn-transparent {
+		top: -15em;
+	}
+
+	#headline {
+		position: relative;
+		top: -2em;
+		font-size: 48px;
+		letter-spacing: 2;
+	}
+
+	#tagline {
+		position: relative;
+		top: -4em;
+		font-size: 24px;
+	}
+
+	#actionButtons {
+		flex-direction: column;
+		top: 0;
+	}
+	#free-assessment{
+		position: relative;
+		top: -4em;
+	}
+
+	.card-img {
+		height: 200px;
+	}
+
+	/* #divider {
+		height: 300px;
+	} */
+
+	form {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.footer {
+		height: 200px;
+		/* padding: 10px; */
+	}
+
+	.footer .container {
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 15px;
+	}
+
+	.footer .social-icons a {
+		font-size: 24px;
+		top: -4em;
+		position: relative;
+	}
+}
+.btn-transparent btn-lg a {
+	position: relative;
+	bottom: 2em;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+	display: none; /* Hidden by default */
+	position: absolute;
+	top: 20px;
+	right: -200px;
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-size: 30px;
+	cursor: pointer;
+	z-index: 1001;
+}
+#year {
+	text-align: center;
+	position: relative;
+	top: -3em;
+}
+
+/* Show hamburger on mobile and tablet */
+@media (max-width: 1024px) {
+	.hamburger {
+		display: block;
+	}
+}
