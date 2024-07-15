@@ -39,11 +39,11 @@ img {
 #logo {
 	height: 200px;
 	width: 250px;
-	background-image: url('images/Fitness for anyone (3.5 x 2 in).png');
+	background-image: url('images/Fitness_for_anyone.png'); /* Simplified name */
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	top: -9em;
+	top: -6em;
 	left: -35em;
 }
 
@@ -101,7 +101,7 @@ img {
 	padding: 8px;
 	margin: 8px;
 	position: relative;
-	top: -21em;
+	top: -18em;
 	text-decoration: none;
 }
 
@@ -335,7 +335,7 @@ button:hover {
 		flex-direction: column;
 		top: 0;
 	}
-	#free-assessment{
+	#free-assessment {
 		position: relative;
 		top: -4em;
 	}
